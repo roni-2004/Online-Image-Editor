@@ -8,49 +8,57 @@
     <link rel = "stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel = "stylesheet" href = "https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    
+    <script defer src="./script.js"></script>
 </head>
 <body>
     <div class="Container disable">
-        <h2>Online Image Editor</h2>
+        <div class="mainlogo"><center><img class="logo" src="Images/logo.png"></center></div>
         <div class="wrapper">
             <div class="editor-panel">
                 <div class="filter">
-                    <label class="title">Filters</label>
-                    <div class="Options">
-                        <button id="brightness" class="active">Brightness</button>
-                        <button id="saturation">Saturation</button>
-                        <button id="inversion">Inversion</button>
-                        <button id="grayscale">Grayscale</button>
+                    <div>
+                        <label class="title">Filters</label>    
+                        <div class="Options">
+                                <button id="brightness" class="active">Brightness</button>
+                                <button id="saturation">Saturation</button>
+                                <button id="inversion">Inversion</button>
+                                <button id="grayscale">Grayscale</button>
+                        </div>
+
                     </div>
                     <div class="slider">
                         <div class="filter-info">
-                            <p class="name">Brightness</p>
-                            <p class="value">100%</p>
+                            <p class="name" id="name">Brightness</p>
+                            <p class="value" id="value-display">100%</p>
                         </div>
                         <div>
-                            <input type="range" value="100" min="0" max="200">
-                         </div>
+                            <input id="slider" type="range" min="0" max="200" oninput="getSliderValue(this.value)">
+                        </div>
                     </div>
                     <div class="rotate">
                         <label class="title">Rotate and Flip</label>
-                        <div class="options">
-                            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
-                            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
-                            <button id="horizontal"><i class="bx bx-reflect-horizontal"></i></button>
-                            <button id="vertical"><i class="bx bx-reflect-vertical"></i></button>
+                        <div class="flip-options">
+                            <div><button id="left" onclick="applyAntiRotate()"><i class="fa-solid fa-rotate-left"></i></button></div>
+                            <div><button id="right" onclick="applyRotate()"><i class="fa-solid fa-rotate-right"></i></button></div>
+                            <div><button id="flip" onclick="applyFlip()"><i class="bx bx-reflect-horizontal"></i></button></div>
+                            <div><button id="vertical" onclick="horizontalFlip()"><i class="bx bx-reflect-vertical"></i></button></div>
                         </div>
-                    </div>
+                    </div>   
                 </div>
-                <div class="preview-img">
-                    <img src="Images/Click here.png" alt="Preview Image">
+                <div class="image">
+                    <img id="image" src="Images/Click here.png" alt="Preview Image">
                 </div>
             </div>
             <div class="controls">
-                <button class="reset-filter">Reset Filters</button>
+            <label class="custom-file-upload">
+                <input id="image-upload" type="file" class="input" accept="image/*"> 
+                Upload
+                <i class="fa fa-upload" style="font-size:24px;color:#C27664;"></i>
+            </label>
                 <div class="output">
-                    <input type="file" class="input" accept="image/*" hidden>
-                    <button id="upload">Upload Image</button>
-                    <button id="download">Download Image</button>
+                    <button class="reset-filter" onclick="resetFilter()">Reset Filters</button>
+                    <button id="download" onclick="downloadImage()">Download Image</button>
                 </div>
             </div>
         </div>

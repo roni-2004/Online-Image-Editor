@@ -1,4 +1,190 @@
-.wrapper{
-    background-color: bisque;
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+
+body{
+    background-image: url(Images/background.gif); 
+    background-size: 100%;
+    background-blend-mode: lighten; 
+    
+    font-family: Lato;
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+.mainlogo{
+    background-color: white;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 20px;
+
+}
+
+
+.wrapper{
+    background-color: #cfb896; 
+    background-blend-mode: lighten; 
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 50px;
+    border-radius:20px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+}
+
+.editor-panel{
+    display: flex;
+    column-gap: 30px;
+    justify-content: space-between;
+}
+
+.filter{
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-image: url(Images/vanilla.jpg); 
+    flex: 1;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.Options{
+    padding-top: 30px;
+    width: 300px; 
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.Options > button {
+    width: 300px;
+    padding: 20px 15px;
+    border: 1px solid antiquewhite;
+    background-color: #C27664;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    
+}
+
+.Options > button:hover{
+    background-color: #9DC08B;
+    color: #fff;
+    
+}
+
+.slider {
+    width: 300px;
+}
+
+.filter-info {
+    display: flex;
+    
+    align-items: flex-start;
+    padding-left: 50px;
+    flex-direction: column;
+    
+}
+
+.image {
+    border: 2px solid #000;
+}
+
+.image > img {
+    max-height: 500px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.flip-options {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+
+.flip-options > div > button {
+    width: 80px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid antiquewhite;
+    border-radius: 50%;
+    background-color: #C27664;
+}
+
+.flip-options > div > button:hover{
+    background-color: #03C988;
+    color: black;
+}
+
+.slider > div > input {
+    position: relative;
+    top: 200px;
+    transform: rotate(-90deg);
+}
+
+.slider > div > p {
+    position: relative;
+    top: 100px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.output > button {
+    width: 200px;
+    height: 55px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+button {
+    background-color: #bae8e8;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    padding: 20px;
+    background-color: #bae8e8;
+    width: 200px;
+    height: 55px;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
